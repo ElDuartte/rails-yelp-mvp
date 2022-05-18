@@ -1,0 +1,15 @@
+<h1><%= @restaurant.name %></h1>
+<h2>Address: <%=  @restaurant.address%></h2>
+<h3>Category: <%= @restaurant.category %></h3>
+
+<%= link_to 'Reviews', restaurant_reviews_path(@restaurant) %>
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name, placeholder: "Write the restaurant name here" %>
+  <%= f.input :address, placeholder: "Write the restaurant name here" %>
+  <%= f.input :category, placeholder: "Write the category here (out of 'chinese', 'italian', japanese, 'french' and 'belgian')" %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
+
+
+<%# <%= render 'reviews/form' %>
